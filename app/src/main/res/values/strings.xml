@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">ComposeTutorial</string>
+    <string name="label_clothing_fashion">Clothing &amp; Fashion</string>
+    <string name="hint_search_here">Search here...</string>
+</resources>
