@@ -9,47 +9,47 @@ fun getCategoryData(): MutableList<CategoryModel> {
         add(
             CategoryModel(
                 name = "Women Clothing & Other",
-                image = "https://hlik-deep-bhaumik.s3.amazonaws.com/amog/user/business_category/default.png"
+                image = "https://hlik-deep-bhaumik.s3.amazonaws.com/amog/advertise/gallery/05s5Wp8w971670926700.jpeg"
             )
         )
 
         add(
             CategoryModel(
                 name = "Men Clothing & Other",
-                image = "https://hlik-deep-bhaumik.s3.amazonaws.com/amog/user/business_category/default.png"
+                image = "https://hlik-deep-bhaumik.s3.amazonaws.com/amog/advertise/gallery/05s5Wp8w971670926700.jpeg"
             )
         )
         add(
             CategoryModel(
                 name = "Children Clothing",
-                image = "https://hlik-deep-bhaumik.s3.amazonaws.com/amog/user/business_category/default.png"
+                image = "https://hlik-deep-bhaumik.s3.amazonaws.com/amog/advertise/gallery/05s5Wp8w971670926700.jpeg"
             )
         )
         add(
             CategoryModel(
                 name = "Game Toys",
-                image = "https://hlik-deep-bhaumik.s3.amazonaws.com/amog/user/business_category/default.png"
+                image = "https://hlik-deep-bhaumik.s3.amazonaws.com/amog/advertise/gallery/1192035678.jpg"
             )
         )
 
         add(
             CategoryModel(
                 name = "Beauty Material & Spa",
-                image = "https://hlik-deep-bhaumik.s3.amazonaws.com/amog/user/business_category/default.png"
+                image = "https://hlik-deep-bhaumik.s3.amazonaws.com/amog/advertise/gallery/05s5Wp8w971670926700.jpeg"
             )
         )
 
         add(
             CategoryModel(
                 name = "Assorted Attires/Unisex Accessories",
-                image = "https://hlik-deep-bhaumik.s3.amazonaws.com/amog/user/business_category/default.png"
+                image = "https://hlik-deep-bhaumik.s3.amazonaws.com/amog/advertise/gallery/133451389.jpg"
             )
         )
 
         add(
             CategoryModel(
                 name = "Other",
-                image = "https://hlik-deep-bhaumik.s3.amazonaws.com/amog/user/business_category/default.png"
+                image = "https://hlik-deep-bhaumik.s3.amazonaws.com/amog/advertise/gallery/20221207185457jdr97kfopc.jpg"
             )
         )
     }

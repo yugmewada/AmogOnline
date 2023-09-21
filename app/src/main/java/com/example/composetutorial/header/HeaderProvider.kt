@@ -49,11 +49,12 @@ fun CommonAppHeader() {
                     painter = painterResource(id = R.drawable.ic_black_arrow),
                     contentDescription = "Back Arrow",
                     modifier = Modifier
-                        .layoutId("imageBackArrow")
-                        .padding(16.dp)
                         .clickable {
                             Log.d("TAG", "CommonAppHeader: ")
                         }
+                        .layoutId("imageBackArrow")
+                        .padding(16.dp)
+
                 )
             },
             title = {

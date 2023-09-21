@@ -1,12 +1,10 @@
 package com.example.composetutorial.lists
 
-import android.graphics.Paint.Align
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
@@ -38,7 +36,7 @@ import coil.annotation.ExperimentalCoilApi
 import coil.transform.RoundedCornersTransformation
 
 @Composable
-@Preview
+@Preview(showSystemUi = true, showBackground = true)
 fun CommonCategoryList(name: String = "Yug", image: String = "") {
     Column(
 
