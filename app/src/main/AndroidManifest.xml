@@ -16,9 +16,8 @@
         android:theme="@style/Theme.ComposeTutorial"
         tools:targetApi="31">
         <activity
-            android:name=".uis.home.CategoryActivity"
+            android:name=".ui.theme.home.screens.SubCategoryActivity"
             android:exported="true"
-            android:label="@string/app_name"
             android:theme="@style/Theme.ComposeTutorial">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -1,5 +1,6 @@
 package com.example.composetutorial.lists
 
+import android.net.Uri
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
@@ -30,16 +31,16 @@ import androidx.compose.ui.unit.dp
 import com.example.composetutorial.R
 import androidx.compose.runtime.*
 import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.compose.ui.res.painterResource
 import coil.compose.ImagePainter
 import coil.compose.rememberImagePainter
 import coil.annotation.ExperimentalCoilApi
 import coil.transform.RoundedCornersTransformation
 
 @Composable
-@Preview(showSystemUi = true, showBackground = true)
+@Preview(showSystemUi = false, showBackground = true)
 fun CommonCategoryList(name: String = "Yug", image: String = "") {
     Column(
-
         modifier = Modifier
             .background(colorResource(id = R.color.color_white))
             .padding(bottom = 10.dp)
@@ -57,9 +58,16 @@ fun CommonCategoryList(name: String = "Yug", image: String = "") {
                 text = name,
                 fontFamily = FontFamily(Font(R.font.sofia_pro_semi_bold)),
                 color = colorResource(id = R.color.colorBlack2),
-                modifier = Modifier.padding(start = 16.dp),
+                modifier = Modifier
+                    .padding(start = 16.dp)
+                    .weight(1f),
                 overflow = TextOverflow.Ellipsis,
                 maxLines = 2
+            )
+
+            Image(
+                painter = painterResource(id = R.drawable.ic_arrow_next),
+                contentDescription = "Next Arrow"
             )
 
         }
