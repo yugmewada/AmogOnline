@@ -11,8 +11,12 @@
     <!--App Colors-->
     <color name="colorBlack1">#061E31</color>
     <color name="colorBlack2">#1F394E</color>
+    <color name="colorBlack_Op50">#80150F1C</color>
 
     <color name="colorBlue">#3350CB</color>
+    <color name="colorBlue2">#5E92EE</color>
+    <color name="colorLightBlue">#E1EBFF</color>
+    <color name="colorYellow">#F2FF33</color>
 
 
     <color name="colorGrey">#646D95</color>
@@ -20,6 +24,7 @@
     <color name="colorGrey2">#70707021</color>
     <color name="colorGrey2_OP12">#F2F3F2</color>
     <color name="colorGrey3">#00000017</color>
+    <color name="colorGrey4">#F6F7F9</color>
     <color name="colorGrey1_OP4">#0A707070</color>
     <color name="colorGrey1_OP14">#24707070</color>
 

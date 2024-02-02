@@ -10,21 +10,32 @@
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:usesCleartextTraffic="true"
         android:roundIcon="@mipmap/ic_launcher_round"
-        android:supportsRtl="true"
+        android:supportsRtl="false"
         android:theme="@style/Theme.ComposeTutorial"
+        android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".ui.theme.home.screens.SubCategoryActivity"
+            android:name=".auth.LoginActivity"
             android:exported="true"
-            android:theme="@style/Theme.ComposeTutorial">
+            android:theme="@style/AnimatedSplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".ui.theme.home.screens.HomeActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".ui.theme.home.screens.SubCategoryActivity"
+            android:screenOrientation="portrait" />
+
+
     </application>
+
 
 </manifest>

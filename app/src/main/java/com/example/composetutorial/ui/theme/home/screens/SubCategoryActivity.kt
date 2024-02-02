@@ -1,15 +1,19 @@
 package com.example.composetutorial.ui.theme.home.screens
 
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.LocalOverscrollConfiguration
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.Divider
@@ -25,7 +29,7 @@ import androidx.compose.ui.unit.dp
 import com.example.composetutorial.R
 import com.example.composetutorial.custom.CommonAppHeader
 import com.example.composetutorial.custom.CustomSearchField
-import com.example.composetutorial.lists.CommonCategoryList
+import com.example.composetutorial.ui.theme.home.listings.CommonCategoryList
 import com.example.composetutorial.provider.getCategoryData
 
 class SubCategoryActivity : ComponentActivity() {
@@ -46,7 +50,15 @@ class SubCategoryActivity : ComponentActivity() {
                 Toast.makeText(this@SubCategoryActivity, "Hello World", Toast.LENGTH_SHORT).show()
             }
             Column {
-                CustomSearchField()
+                CustomSearchField(
+                    hint = stringResource(id = R.string.hint_search_here),
+                    modifier = Modifier
+                        .clickable {
+                            Log.e("TAG", "MakeHeader: ")
+                        }
+                        .padding(start = 16.dp, end = 16.dp)
+                        .fillMaxWidth()
+                        .size(48.dp))
                 Divider(
                     thickness = 4.dp,
                     color = colorResource(id = R.color.colorGrey1_OP4),

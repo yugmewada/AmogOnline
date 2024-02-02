@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="Theme.ComposeTutorial" parent="android:Theme.Material.Light.NoActionBar" />
+    <style name="Theme.ComposeTutorial" parent="android:Theme.Material.Light.NoActionBar">
+        <item name="android:statusBarColor">@color/color_white</item>
+        <item name="android:windowLightStatusBar">true</item>
+    </style>
+
+    <style name="AnimatedSplashScreen" parent="Theme.ComposeTutorial">
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
 </resources>

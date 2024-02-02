@@ -2,6 +2,15 @@
     <string name="app_name">ComposeTutorial</string>
     <string name="label_clothing_fashion">Clothing &amp; Fashion</string>
     <string name="label_category_icons">Categories Icons</string>
+    <string name="label_visit_now">Visit Now</string>
+    <string name="label_visit_open_market">Visit Open Market</string>
+    <string name="label_all_categories">All Categories</string>
+    <string name="label_view_all_products">View All Products</string>
+    <string name="label_advertise_business">Advertise your\nbusiness</string>
+    <string name="label_advertise_business_message">Growing up your business</string>
 
     <string name="hint_search_here">Search here...</string>
+    <string name="hint_search_what_are_you_looking_for">What are you looking for?</string>
+
+    <string name="dummy_lorem_ipsum_open_market">Lorem Ipsum is simply dummy text...</string>
 </resources>

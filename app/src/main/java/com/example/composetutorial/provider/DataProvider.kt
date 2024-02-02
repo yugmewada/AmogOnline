@@ -1,7 +1,24 @@
 package com.example.composetutorial.provider
 
+import com.example.composetutorial.data.BannerModel
 import com.example.composetutorial.data.CategoryModel
 import com.example.composetutorial.data.HomeCategoriesModel
+
+fun getAdvertiseBanner(): MutableList<BannerModel> {
+    return mutableListOf<BannerModel>().apply {
+        add(
+            BannerModel("https://hlik-deep-bhaumik.s3.amazonaws.com/amog/customer/business_advertise_images/dsfd.png")
+        )
+
+        add(
+            BannerModel("https://hlik-deep-bhaumik.s3.amazonaws.com/amog/customer/business_advertise_images/dsfd.png")
+        )
+
+        add(
+            BannerModel("https://hlik-deep-bhaumik.s3.amazonaws.com/amog/customer/business_advertise_images/dsfd.png")
+        )
+    }
+}
 
 fun getHomeProductCategories(): MutableList<HomeCategoriesModel> {
     return mutableListOf<HomeCategoriesModel>().apply {

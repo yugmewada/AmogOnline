@@ -1,4 +1,4 @@
-package com.example.composetutorial.ui.theme.home
+package com.example.composetutorial.ui.theme.home.listings
 
 import android.util.Log
 import androidx.compose.foundation.BorderStroke
@@ -18,7 +18,6 @@ import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.CircularProgressIndicator
-import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
@@ -31,6 +30,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
@@ -47,33 +47,22 @@ import com.example.composetutorial.R
 import com.example.composetutorial.provider.getHomeProductCategories
 
 
-@OptIn(ExperimentalFoundationApi::class)
+
 @Preview(showSystemUi = true, device = Devices.DEFAULT, name = "Home Categories")
 @Composable
 fun HomeProductCategories() {
     Column(
         modifier = Modifier
             .wrapContentHeight(Alignment.Top)
-            .padding(start = 15.dp, end = 15.dp, bottom = 20.dp)
+            .padding(start = 15.dp, end = 15.dp)
     ) {
-        /*Text(
-            text = stringResource(id = R.string.label_category_icons),
-            fontFamily = FontFamily(Font(R.font.sofia_pro_semi_bold)),
-            fontSize = 14.sp,
-            modifier = Modifier.padding(top = 14.dp)
-        )*/
-
-        CompositionLocalProvider(
-            LocalOverscrollConfiguration.provides(null),
-        ){
-            LazyVerticalGrid(
-                columns = GridCells.Fixed(3),
-                content = {
-                    items(getHomeProductCategories()) {
-                        LoadCategoryData(image = it.image, name = it.name)
-                    }
-                })
-        }
+        LazyVerticalGrid(
+            columns = GridCells.Fixed(3),
+            content = {
+                items(getHomeProductCategories()) {
+                    LoadCategoryData(image = it.image, name = it.name)
+                }
+            })
     }
 }
 
@@ -127,7 +116,8 @@ private fun LoadImage(image: String) {
             contentDescription = "",
             modifier = Modifier
                 .align(Alignment.Center)
-                .size(width = 80.dp, height = 70.dp)
+                .size(width = 65.dp, height = 60.dp),
+            contentScale = ContentScale.FillWidth
         )
 
         if (painter.state is ImagePainter.State.Loading) {

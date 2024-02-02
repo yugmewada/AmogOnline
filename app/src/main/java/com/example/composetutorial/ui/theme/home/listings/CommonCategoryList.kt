@@ -1,6 +1,5 @@
-package com.example.composetutorial.lists
+package com.example.composetutorial.ui.theme.home.listings
 
-import android.net.Uri
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
