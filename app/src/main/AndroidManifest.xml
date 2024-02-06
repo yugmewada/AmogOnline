@@ -16,7 +16,7 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".auth.LoginActivity"
+            android:name=".ui.theme.splash.SplashActivity"
             android:exported="true"
             android:theme="@style/AnimatedSplashScreen">
             <intent-filter>
@@ -28,6 +28,14 @@
 
         <activity
             android:name=".ui.theme.home.screens.HomeActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".auth.WelcomeActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".auth.LoginActivity"
             android:screenOrientation="portrait" />
 
         <activity
