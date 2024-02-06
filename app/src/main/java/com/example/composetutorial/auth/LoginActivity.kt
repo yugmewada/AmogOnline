@@ -3,17 +3,13 @@ package com.example.composetutorial.auth
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material3.Button
-import androidx.compose.material3.ButtonDefaults
-import androidx.compose.material3.OutlinedButton
+import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -26,23 +22,22 @@ import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
-import androidx.compose.ui.tooling.preview.Devices
+import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.core.view.WindowCompat
 import com.example.composetutorial.R
+import com.example.composetutorial.custom.TextFields.CommonTextField
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
 
 class LoginActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        WindowCompat.setDecorFitsSystemWindows(window, false)
         setContent {
-            SetStatusBarColor(color = Color.Transparent)
-            LoginScreenBackGround()
-            //navigateUser()
+            SetStatusBarColor(color = colorResource(id = R.color.colorBlue3))
+            SetBackground()
         }
     }
 
@@ -50,18 +45,13 @@ class LoginActivity : ComponentActivity() {
     fun SetStatusBarColor(color: Color) {
         val systemUiController = rememberSystemUiController()
         SideEffect {
-            systemUiController.setSystemBarsColor(color)
+            systemUiController.setStatusBarColor(color)
         }
     }
 
     @Composable
-    @Preview(
-        name = "Login Screen",
-        device = Devices.DEFAULT,
-        showBackground = true,
-        showSystemUi = true
-    )
-    fun LoginScreenBackGround() {
+    @Preview(name = "Login Background", showSystemUi = true)
+    private fun SetBackground() {
         Surface {
             Image(
                 contentScale = ContentScale.FillBounds,
@@ -70,63 +60,36 @@ class LoginActivity : ComponentActivity() {
                 modifier = Modifier.fillMaxSize()
             )
 
+
             Column(
-                verticalArrangement = Arrangement.SpaceEvenly,
-                horizontalAlignment = Alignment.CenterHorizontally
-
+                verticalArrangement = Arrangement.SpaceBetween,
+                horizontalAlignment = Alignment.CenterHorizontally,
+                modifier = Modifier.padding(start = 25.dp, end = 25.dp)
             ) {
-                Image(
-                    painter = painterResource(id = R.drawable.image_hyperlink),
-                    contentDescription = "Middle Image",
-                    modifier = Modifier
-                        .padding(top = 150.dp)
-                        .weight(1f)
-
+                Text(
+                    text = "Login",
+                    modifier = Modifier.fillMaxWidth(),
+                    fontFamily = FontFamily(Font(R.font.sf_bold)),
+                    fontSize = 24.sp,
                 )
 
-                Button(
-                    onClick = {},
-                    colors = ButtonDefaults.buttonColors(containerColor = colorResource(id = R.color.colorBlue2)),
-                    shape = RoundedCornerShape(4.dp),
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(start = 25.dp, end = 25.dp, top = 50.dp)
+                CommonTextField(
+                    isPassword = false,
+                    leadingIcon = R.drawable.ic_person,
+                    keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Text),
+                    placeHolder = "Phone number, email or username",
+                    modifier = Modifier.fillMaxWidth()
+                )
 
-                ) {
-                    Text(
-                        text = "Login",
-                        fontFamily = FontFamily(Font(R.font.sf_bold)),
-                        fontSize = 18.sp
-                    )
-                }
-
-                OutlinedButton(
-                    onClick = {},
-                    border = BorderStroke(2.dp, color = colorResource(id = R.color.colorBlue2)),
-                    shape = RoundedCornerShape(4.dp),
-                    colors = ButtonDefaults.buttonColors(containerColor = colorResource(id = R.color.color_white)),
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(start = 25.dp, end = 25.dp, top = 25.dp)
-                ) {
-                    Text(
-                        text = "Create a new account",
-                        fontFamily = FontFamily(Font(R.font.sf_bold)),
-                        fontSize = 18.sp,
-                        color = colorResource(id = R.color.black)
-                    )
-                }
-
-                Text(
-                    text = "Skip now",
-                    fontFamily = FontFamily(Font(R.font.sf_regular)),
-                    fontSize = 18.sp,
-                    color = colorResource(id = R.color.colorBlack_Op50),
-                    modifier = Modifier.padding(bottom = 50.dp, top = 25.dp)
+                CommonTextField(
+                    isPassword = true,
+                    leadingIcon = R.drawable.ic_lock,
+                    keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password),
+                    placeHolder = "Password",
+                    modifier = Modifier.fillMaxWidth(),
                 )
             }
+
         }
     }
-
-
 }
