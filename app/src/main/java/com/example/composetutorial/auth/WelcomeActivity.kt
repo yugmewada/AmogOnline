@@ -34,6 +34,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.core.view.WindowCompat
 import com.example.composetutorial.R
+import com.example.composetutorial.custom.BlueButton
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
 
 class WelcomeActivity : ComponentActivity() {
@@ -86,26 +87,12 @@ class WelcomeActivity : ComponentActivity() {
 
                 )
 
-                Button(
-                    onClick = {
-                        startActivity(
-                            Intent(
-                                this@WelcomeActivity,
-                                LoginActivity::class.java
-                            )
+                BlueButton {
+                    startActivity(
+                        Intent(
+                            this@WelcomeActivity,
+                            LoginActivity::class.java
                         )
-                    },
-                    colors = ButtonDefaults.buttonColors(containerColor = colorResource(id = R.color.colorBlue2)),
-                    shape = RoundedCornerShape(4.dp),
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(start = 25.dp, end = 25.dp, top = 50.dp)
-
-                ) {
-                    Text(
-                        text = "Login",
-                        fontFamily = FontFamily(Font(R.font.sf_bold)),
-                        fontSize = 18.sp
                     )
                 }
 

@@ -11,6 +11,7 @@
     <!--App Colors-->
     <color name="colorBlack1">#061E31</color>
     <color name="colorBlack2">#1F394E</color>
+    <color name="colorBlack3">#150F1C</color>
     <color name="colorBlack_Op50">#80150F1C</color>
 
     <color name="colorBlue">#3350CB</color>

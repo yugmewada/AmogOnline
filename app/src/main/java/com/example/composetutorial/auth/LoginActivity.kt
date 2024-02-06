@@ -5,12 +5,12 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.text.KeyboardOptions
-import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.SideEffect
@@ -20,14 +20,15 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.core.view.WindowCompat
 import com.example.composetutorial.R
+import com.example.composetutorial.custom.BlueButton
 import com.example.composetutorial.custom.TextFields.CommonTextField
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
 
@@ -52,7 +53,7 @@ class LoginActivity : ComponentActivity() {
     @Composable
     @Preview(name = "Login Background", showSystemUi = true)
     private fun SetBackground() {
-        Surface {
+        Box(contentAlignment = Alignment.Center) {
             Image(
                 contentScale = ContentScale.FillBounds,
                 painter = painterResource(id = R.drawable.image_splash_background),
@@ -62,9 +63,10 @@ class LoginActivity : ComponentActivity() {
 
 
             Column(
-                verticalArrangement = Arrangement.SpaceBetween,
-                horizontalAlignment = Alignment.CenterHorizontally,
-                modifier = Modifier.padding(start = 25.dp, end = 25.dp)
+                verticalArrangement = Arrangement.Center,
+                modifier = Modifier
+                    .padding(start = 25.dp, end = 25.dp)
+                    .fillMaxSize()
             ) {
                 Text(
                     text = "Login",
@@ -86,8 +88,25 @@ class LoginActivity : ComponentActivity() {
                     leadingIcon = R.drawable.ic_lock,
                     keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password),
                     placeHolder = "Password",
-                    modifier = Modifier.fillMaxWidth(),
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(top = 10.dp),
                 )
+
+                Text(
+                    text = "Need help logging in?",
+                    style = TextStyle(
+                        fontFamily = FontFamily(Font(R.font.sf_regular)),
+                        fontSize = 14.sp,
+                        color = colorResource(id = R.color.colorBlack3)
+                    ),
+                    modifier = Modifier.padding(top = 25.dp)
+                )
+
+                BlueButton {
+
+                }
+
             }
 
         }
