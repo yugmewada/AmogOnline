@@ -24,7 +24,7 @@ import androidx.compose.ui.unit.dp
 import androidx.core.view.WindowCompat
 import androidx.lifecycle.lifecycleScope
 import com.example.composetutorial.R
-import com.example.composetutorial.auth.WelcomeActivity
+import com.example.composetutorial.ui.theme.auth.WelcomeActivity
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch

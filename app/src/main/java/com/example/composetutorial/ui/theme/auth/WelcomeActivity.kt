@@ -1,4 +1,4 @@
-package com.example.composetutorial.auth
+package com.example.composetutorial.ui.theme.auth
 
 import android.content.Intent
 import android.os.Bundle
@@ -13,7 +13,6 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Surface
@@ -87,7 +86,12 @@ class WelcomeActivity : ComponentActivity() {
 
                 )
 
-                BlueButton {
+                BlueButton(
+                    text = "Login",
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(start = 25.dp, end = 25.dp, top = 50.dp)
+                ) {
                     startActivity(
                         Intent(
                             this@WelcomeActivity,

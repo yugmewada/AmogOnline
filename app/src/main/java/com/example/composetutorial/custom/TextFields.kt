@@ -38,7 +38,8 @@ object TextFields : ComponentActivity() {
         trailingIcon: Int? = null,
         placeHolder: String,
         keyboardOptions: KeyboardOptions,
-        modifier: Modifier
+        modifier: Modifier,
+        isEmpty :(Boolean) -> Unit
     ) {
 
         var showPassword by remember { mutableStateOf(true) }
@@ -47,6 +48,7 @@ object TextFields : ComponentActivity() {
         }
 
         TextField(
+            singleLine = true,
             colors = TextFieldDefaults.textFieldColors(
                 containerColor = Color.Transparent,
                 focusedIndicatorColor = colorResource(id = R.color.colorBlue2_OP21),
@@ -64,6 +66,7 @@ object TextFields : ComponentActivity() {
 
             onValueChange = {
                 resultantData = it
+                isEmpty.invoke(it.isNotEmpty())
             },
             keyboardOptions =
             if (isPassword)
